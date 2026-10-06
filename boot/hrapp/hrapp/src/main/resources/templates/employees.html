@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>HR Application</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+
+        .add-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #198754;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #343a40;
+            color: white;
+        }
+
+        .delete-btn {
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>HR Management System</h1>
+
+    <a href="/employees/new" class="add-btn">
+        Add Employee
+    </a>
+
+    <table>
+
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Designation</th>
+            <th>Salary</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr th:each="employee : ${employees}">
+
+            <td th:text="${employee.id}"></td>
+
+            <td th:text="${employee.name}"></td>
+
+            <td th:text="${employee.department}"></td>
+
+            <td th:text="${employee.designation}"></td>
+
+            <td th:text="${employee.salary}"></td>
+
+            <td>
+                <a class="delete-btn"
+                   th:href="@{/employees/delete/{id}(id=${employee.id})}">
+                    Delete
+                </a>
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>

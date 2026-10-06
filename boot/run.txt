@@ -1,0 +1,318 @@
+SADP SPRING BOOT PRACTICAL – 5 QUESTIONS
+Quick Run & Testing Steps
+Windows VS Code + Linux Lab
+
+==================================================
+Q1 – HR APPLICATION
+==================================================
+
+Project: hrapp
+
+1. Open the hrapp folder containing pom.xml in VS Code.
+
+2. Run:
+Windows:
+.\mvnw.cmd spring-boot:run
+
+Linux:
+./mvnw spring-boot:run
+
+3. Open in browser:
+http://localhost:8080
+
+or:
+http://localhost:8080/employees
+
+4. Add Employee:
+Click Add Employee and enter employee details, then click Save Employee.
+
+5. Delete Employee:
+Click Delete beside an employee.
+
+HTTP Methods:
+GET    – View employees
+POST   – Add employee
+DELETE – Delete employee
+
+Port: 8080
+
+
+==================================================
+Q2 – TASK MANAGEMENT API
+==================================================
+
+Project: taskmanagement
+
+1. Open the taskmanagement folder containing pom.xml in VS Code.
+
+2. Run:
+Windows:
+.\mvnw.cmd spring-boot:run
+
+Linux:
+./mvnw spring-boot:run
+
+3. GET All Tasks:
+Browser:
+http://localhost:8082/api/tasks
+
+4. GET Task by ID:
+http://localhost:8082/api/tasks/1
+
+5. POST – Add Task:
+Method: POST
+URL:
+http://localhost:8082/api/tasks
+
+Body → raw → JSON:
+{
+  "id": 3,
+  "title": "Complete Spring Practical",
+  "category": "Programming",
+  "dueDate": "2026-10-10",
+  "completed": false
+}
+
+6. PUT – Update Task:
+Method: PUT
+URL:
+http://localhost:8082/api/tasks/3
+
+Body → raw → JSON:
+{
+  "id": 3,
+  "title": "Complete Spring Boot Practical",
+  "category": "Programming",
+  "dueDate": "2026-10-12",
+  "completed": true
+}
+
+7. DELETE – Delete Task:
+Method: DELETE
+URL:
+http://localhost:8082/api/tasks/3
+
+8. GET Tasks by Category:
+http://localhost:8082/api/tasks/category/Programming
+
+HTTP Methods:
+GET, POST, PUT, DELETE
+
+Port: 8082
+
+
+==================================================
+Q3 – USER REGISTRATION AND LOGIN
+==================================================
+
+Project: userregistration
+
+1. Open the userregistration folder containing pom.xml in VS Code.
+
+2. Run:
+Windows:
+.\mvnw.cmd spring-boot:run
+
+Linux:
+./mvnw spring-boot:run
+
+3. POST – User Registration:
+Method: POST
+URL:
+http://localhost:8083/api/users/register
+
+Body → raw → JSON:
+{
+  "username": "rupesh",
+  "email": "rupesh@gmail.com",
+  "password": "123456"
+}
+
+4. POST – Login:
+Method: POST
+URL:
+http://localhost:8083/api/users/login
+
+Body → raw → JSON:
+{
+  "email": "rupesh@gmail.com",
+  "password": "123456"
+}
+
+5. Validation:
+Test registration with invalid or empty values.
+
+Example:
+{
+  "username": "",
+  "email": "abc",
+  "password": ""
+}
+
+HTTP Method:
+POST
+
+Port: 8083
+
+
+==================================================
+Q4 – EMPLOYEE MICROSERVICE
+==================================================
+
+Project: employeemicroservice
+
+1. Open the employeemicroservice folder containing pom.xml in VS Code.
+
+2. Run:
+Windows:
+.\mvnw.cmd spring-boot:run
+
+Linux:
+./mvnw spring-boot:run
+
+3. GET Employees:
+Browser:
+http://localhost:8084/api/employees
+
+Initial employees:
+101,Rupesh,Software Developer,IT,50000.0
+102,Amit,HR Executive,HR,40000.0
+
+4. POST – Add Employee:
+Method: POST
+URL:
+http://localhost:8084/api/employees
+
+Body → raw → JSON:
+{
+  "eno": 103,
+  "ename": "Shubham",
+  "designation": "Developer",
+  "deptName": "Computer",
+  "salary": 45000
+}
+
+5. GET Again:
+http://localhost:8084/api/employees
+
+Employee details are stored in employees.txt.
+
+IMPORTANT:
+Use "eno" as the employee number.
+Do not use "id".
+
+HTTP Methods:
+GET, POST
+
+Port: 8084
+
+
+==================================================
+Q5 – ERP SYSTEM
+==================================================
+
+Project: erp
+
+1. Open the erp folder containing pom.xml in VS Code.
+
+2. Run:
+Windows:
+.\mvnw.cmd spring-boot:run
+
+Linux:
+./mvnw spring-boot:run
+
+NOTE:
+Do not use:
+http://localhost:8085/
+
+Use the API endpoints below.
+
+-------------------------
+1. INVENTORY
+-------------------------
+
+GET:
+http://localhost:8085/api/inventory
+
+POST:
+Method: POST
+URL:
+http://localhost:8085/api/inventory
+
+Body → raw → JSON:
+{
+  "id": 3,
+  "productName": "Mouse",
+  "quantity": 20,
+  "price": 800
+}
+
+-------------------------
+2. SALES
+-------------------------
+
+GET:
+http://localhost:8085/api/sales
+
+POST:
+Method: POST
+URL:
+http://localhost:8085/api/sales
+
+Body → raw → JSON:
+{
+  "saleId": 2,
+  "productName": "Keyboard",
+  "quantity": 5,
+  "totalAmount": 6000
+}
+
+-------------------------
+3. FINANCE
+-------------------------
+
+GET:
+http://localhost:8085/api/finance
+
+POST:
+Method: POST
+URL:
+http://localhost:8085/api/finance
+
+Body → raw → JSON:
+{
+  "id": 2,
+  "type": "Expense",
+  "amount": 15000,
+  "description": "Office expenses"
+}
+
+HTTP Methods:
+GET, POST
+
+Port: 8085
+
+
+==================================================
+QUICK PORT LIST
+==================================================
+
+Q1 – HR Application          → 8080
+Q2 – Task Management API     → 8082
+Q3 – User Registration/Login  → 8083
+Q4 – Employee Microservice   → 8084
+Q5 – ERP System              → 8085
+
+
+==================================================
+WINDOWS VS LINUX
+==================================================
+
+Windows:
+.\mvnw.cmd spring-boot:run
+
+Linux:
+./mvnw spring-boot:run
+
+The Java code, API URLs and HTTP methods remain the same on Windows and Linux.

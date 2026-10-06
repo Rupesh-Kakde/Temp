@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>User Registration</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 40px;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input {
+            width: 100%;
+            padding: 9px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: #198754;
+            color: white;
+            border: none;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>User Registration</h2>
+
+    <p class="success"
+       th:if="${success}"
+       th:text="${success}">
+    </p>
+
+    <p class="error"
+       th:if="${error}"
+       th:text="${error}">
+    </p>
+
+    <form th:action="@{/register}"
+          th:object="${user}"
+          method="post">
+
+        <label>Name</label>
+
+        <input type="text"
+               th:field="*{name}">
+
+        <p class="error"
+           th:if="${#fields.hasErrors('name')}"
+           th:errors="*{name}">
+        </p>
+
+
+        <label>Email</label>
+
+        <input type="text"
+               th:field="*{email}">
+
+        <p class="error"
+           th:if="${#fields.hasErrors('email')}"
+           th:errors="*{email}">
+        </p>
+
+
+        <label>Password</label>
+
+        <input type="password"
+               th:field="*{password}">
+
+        <p class="error"
+           th:if="${#fields.hasErrors('password')}"
+           th:errors="*{password}">
+        </p>
+
+
+        <button type="submit">
+            Register
+        </button>
+
+    </form>
+
+    <div class="login-link">
+        Already registered?
+        <a href="/login">Login</a>
+    </div>
+
+</div>
+
+</body>
+</html>

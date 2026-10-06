@@ -1,0 +1,14 @@
+SPRING / MICROSERVICE PORTS
+
+Q1_HR_Application             -> default 8080 (no port set in uploaded config)
+Q2_Task_Management_API        -> 8082
+Q3_User_Registration_Login    -> 8083
+Q4_Employee_File_Microservice -> 8084
+Q5_ERP_System                 -> 8085
+Q6_Inventory_System           -> 8086
+
+Microservices:
+Q1_Student_Management         -> 8087
+Q2_Employee_By_Department     -> 8088
+Q3_HR_Interview_Message       -> 8089
+Q4_API_Gateway                -> 8090

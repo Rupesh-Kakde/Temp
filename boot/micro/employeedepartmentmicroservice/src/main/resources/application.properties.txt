@@ -1,0 +1,2 @@
+spring.application.name=employeedepartmentmicroservice
+server.port=8088

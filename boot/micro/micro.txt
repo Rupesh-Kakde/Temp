@@ -1,0 +1,239 @@
+MICROSERVICES PRACTICAL – 4 QUESTIONS
+Quick Run & Testing Steps
+Windows VS Code + Linux Lab
+
+==================================================
+Q1 – STUDENT MICROSERVICE
+==================================================
+
+Project:
+studentmicroservice
+
+1. Open the studentmicroservice folder containing pom.xml in VS Code.
+
+2. Run:
+
+Windows:
+.\mvnw.cmd spring-boot:run
+
+Linux:
+./mvnw spring-boot:run
+
+3. GET All Students:
+
+Browser:
+http://localhost:8087/api/students
+
+4. GET Student by ID:
+
+Browser:
+http://localhost:8087/api/students/1
+
+5. POST – Add Student:
+
+Method: POST
+URL:
+http://localhost:8087/api/students
+
+Body → raw → JSON:
+
+{
+  "studentId": 3,
+  "name": "Shubham",
+  "course": "MSc Computer Science",
+  "semester": 2,
+  "email": "shubham@gmail.com"
+}
+
+6. PUT – Update Student:
+
+Method: PUT
+URL:
+http://localhost:8087/api/students/3
+
+Body → raw → JSON:
+
+{
+  "studentId": 3,
+  "name": "Shubham Dalvi",
+  "course": "MSc Computer Science",
+  "semester": 2,
+  "email": "shubham@gmail.com"
+}
+
+7. DELETE – Delete Student:
+
+Method: DELETE
+URL:
+http://localhost:8087/api/students/3
+
+HTTP Methods:
+GET, POST, PUT, DELETE
+
+Port: 8087
+
+
+==================================================
+Q2 – EMPLOYEE DEPARTMENT MICROSERVICE
+==================================================
+
+Project:
+employeedepartmentmicroservice
+
+1. Open the employeedepartmentmicroservice folder containing pom.xml in VS Code.
+
+2. Run:
+
+Windows:
+.\mvnw.cmd spring-boot:run
+
+Linux:
+./mvnw spring-boot:run
+
+3. GET Employees by Department:
+
+Browser:
+http://localhost:8088/api/employees/department/IT
+
+Other examples:
+
+HR:
+http://localhost:8088/api/employees/department/HR
+
+Finance:
+http://localhost:8088/api/employees/department/Finance
+
+HTTP Method:
+GET
+
+Important:
+This project has the department-based GET endpoint.
+Do not use /api/employees alone.
+
+Port: 8088
+
+
+==================================================
+Q3 – HR INTERVIEW MICROSERVICE
+==================================================
+
+Project:
+hrinterviewmicroservice
+
+1. Open the hrinterviewmicroservice folder containing pom.xml in VS Code.
+
+2. Run:
+
+Windows:
+.\mvnw.cmd spring-boot:run
+
+Linux:
+./mvnw spring-boot:run
+
+3. POST – HR Interview:
+
+Method: POST
+URL:
+http://localhost:8089/api/hr/interview
+
+Body → raw → JSON:
+
+{
+  "candidateId": 1,
+  "name": "Rupesh",
+  "email": "rupesh@gmail.com"
+}
+
+Expected response:
+Hello Rupesh, You have been selected for an interview.
+
+HTTP Method:
+POST
+
+Important:
+Use Postman for this request because it is a POST endpoint.
+
+Port: 8089
+
+
+==================================================
+Q4 – API GATEWAY
+==================================================
+
+Project:
+apigateway
+
+IMPORTANT:
+Q1 Student Microservice must be running on port 8087
+before testing the API Gateway.
+
+1. Open the apigateway folder containing pom.xml in VS Code.
+
+2. Run:
+
+Windows:
+.\mvnw.cmd spring-boot:run
+
+Linux:
+./mvnw spring-boot:run
+
+3. GET Students through API Gateway:
+
+Browser:
+http://localhost:8090/api/students
+
+The request is routed:
+
+API Gateway (8090)
+        ↓
+Student Microservice (8087)
+
+4. GET Student by ID through Gateway:
+
+Browser:
+http://localhost:8090/api/students/1
+
+5. POST Student through Gateway:
+
+Method: POST
+URL:
+http://localhost:8090/api/students
+
+Body → raw → JSON:
+
+{
+  "studentId": 3,
+  "name": "Shubham",
+  "course": "MSc Computer Science",
+  "semester": 2,
+  "email": "shubham@gmail.com"
+}
+
+HTTP Methods:
+GET, POST
+
+Gateway Port: 8090
+
+
+==================================================
+QUICK PORT LIST
+==================================================
+
+Q1 – Student Microservice             → 8087
+Q2 – Employee Department Microservice → 8088
+Q3 – HR Interview Microservice        → 8089
+Q4 – API Gateway                      → 8090
+
+
+==================================================
+WINDOWS VS LINUX
+==================================================
+
+Windows:
+.\mvnw.cmd spring-boot:run
+
+Linux:
+./mvnw spring-boot:run
+
+The Java code, API URLs and HTTP methods remain the same
+on Windows and Linux.

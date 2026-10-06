@@ -1,0 +1,3 @@
+101,Rupesh,Software Developer,IT,50000.0
+102,Amit,HR Executive,HR,40000.0
+103,Shubham,Developer,Computer,45000.0

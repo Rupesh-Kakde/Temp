@@ -1,0 +1,2 @@
+spring.application.name=studentmicroservice
+server.port=8087

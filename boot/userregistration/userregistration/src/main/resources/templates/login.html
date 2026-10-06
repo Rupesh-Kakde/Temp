@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Login</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 40px;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input {
+            width: 100%;
+            padding: 9px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: #0d6efd;
+            color: white;
+            border: none;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>User Login</h2>
+
+    <p class="success"
+       th:if="${message}"
+       th:text="${message}">
+    </p>
+
+    <p class="error"
+       th:if="${error}"
+       th:text="${error}">
+    </p>
+
+    <form action="/login" method="post">
+
+        <label>Email</label>
+
+        <input type="text"
+               name="email"
+               required>
+
+
+        <label>Password</label>
+
+        <input type="password"
+               name="password"
+               required>
+
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+    <p>
+        New user?
+        <a href="/register">Register here</a>
+    </p>
+
+</div>
+
+</body>
+</html>

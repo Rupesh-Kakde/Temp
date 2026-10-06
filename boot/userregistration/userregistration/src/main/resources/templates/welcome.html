@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 80px;
+            background: #f4f4f4;
+        }
+
+        .box {
+            background: white;
+            padding: 40px;
+            width: 400px;
+            margin: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Welcome!</h1>
+
+    <p th:text="${message}">
+    </p>
+
+    <a href="/login">
+        Back to Login
+    </a>
+
+</div>
+
+</body>
+</html>

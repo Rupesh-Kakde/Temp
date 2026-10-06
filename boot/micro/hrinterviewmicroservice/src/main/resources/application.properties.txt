@@ -1,0 +1,2 @@
+spring.application.name=hrinterviewmicroservice
+server.port=8089
